@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Cadastro de Pessoas</title>
+
+<style>
+body {
+  font-family: Arial;
+  background: #eaf0ff;
+  text-align: center;
+  padding: 30px;
+}
+
+.caixa {
+  background: white;
+  max-width: 400px;
+  margin: auto;
+  padding: 25px;
+  border-radius: 12px;
+}
+
+input, button {
+  width: 90%;
+  padding: 12px;
+  margin: 8px;
+}
+
+button {
+  background: blue;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+<div class="caixa">
+  <h1>Cadastro de Pessoas</h1>
+
+  <input id="nome" placeholder="Seu nome">
+  <input id="email" placeholder="Seu e-mail">
+  <input id="telefone" placeholder="Seu telefone">
+  <input id="cidade" placeholder="Sua cidade">
+
+  <button onclick="cadastrar()">Cadastrar</button>
+
+  <p id="resultado"></p>
+</div>
+
+<script>
+function cadastrar() {
+  let nome = document.getElementById("nome").value;
+  let email = document.getElementById("email").value;
+  let telefone = document.getElementById("telefone").value;
+  let cidade = document.getElementById("cidade").value;
+
+  if (nome === "" || email === "") {
+    document.getElementById("resultado").textContent =
+      "Preencha o nome e o e-mail!";
+    return;
+  }
+
+  document.getElementById("resultado").textContent =
+    "Cadastro realizado na página! Nome: " + nome;
+
+  console.log(nome, email, telefone, cidade);
+}
+</script>
+</body>
+</html>
+  
